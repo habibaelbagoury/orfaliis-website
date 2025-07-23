@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Earrings - Orfaliis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">Orfaliis</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="earrings.html" class="active">Earrings</a></li>
+      <li><a href="necklaces.html">Necklaces</a></li>
+      <li><a href="colliers.html">Colliers</a></li>
+      <li><a href="cart.html" class="cart-link">Cart 🛒</a></li>
+    </ul>
+  </nav>
+
+  <section class="product-page">
+    <h1>Earrings</h1>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="earring1.jpg"/>
+        <p>EGP 350</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="earring2.jpg"/>
+        <p>EGP 300</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="earring3.jpg"/>
+        <p>EGP 380</p>
+        <button onclick="addToCart('اسم المنتج', 'وصف قصير', 'رابط الصورة', السعر)">
+  ➕ أضف إلى السلة
+</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Orfaliis. All rights reserved.
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>

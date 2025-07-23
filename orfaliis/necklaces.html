@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Necklaces - Orfaliis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">Orfaliis</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="earrings.html">Earrings</a></li>
+      <li><a href="necklaces.html" class="active">Necklaces</a></li>
+      <li><a href="colliers.html">Colliers</a></li>
+      <li><a href="cart.html" class="cart-link">Cart 🛒</a></li>
+    </ul>
+  </nav>
+
+  <section class="product-page">
+    <h1>Necklaces</h1>
+    <div class="product-grid">
+      <!-- Example product -->
+      <div class="product-card">
+        <img src="necklace8.jpg"/>
+        <p>EGP 500</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="necklace9.jpg"/>
+        <p>EGP 650</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="necklace1.jpg"/>
+        <p>EGP 350</p>
+        <button onclick="addToCart('اسم المنتج', 'وصف قصير', 'رابط الصورة', السعر)">
+  ➕ أضف إلى السلة
+</button>
+      </div>
+      <!-- Add more if you want -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Orfaliis. All rights reserved.
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>

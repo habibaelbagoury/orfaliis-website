@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Orfaliis - Colliers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 class="page-title">Colliers</h1>
+    <a href="cart.html" class="cart-button">🛒 سلامتك</a>
+  </header>
+
+  <main class="product-container">
+    <div class="product-card">
+      <img src="collier1.jpg"/>
+      <p>EGP 1000</p>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="collier2.jpg"/>
+      <p>EGP 1200</p>
+      <button onclick="addToCart('اسم المنتج', 'وصف قصير', 'رابط الصورة', السعر)">
+  ➕ أضف إلى السلة
+</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

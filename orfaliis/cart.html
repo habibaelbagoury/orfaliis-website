@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Orfaliis - Cart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <p style="text-align:center; font-weight: bold;">
+  عدد المنتجات: <span id="item-count"></span>
+</p>
+    <h1 class="page-title">🛍️ عربة التسوق</h1>
+    <a href="index.html" class="cart-button">🏠 الصفحة الرئيسية</a>
+    <button onclick="clearcart()" class="clear-cart-button">🗑️ مسح العربة</button>
+  </header>
+
+  <main class="cart-container" id="cart-container">
+    <!-- المنتجات هتتحمل هنا -->
+  </main>
+
+  <script>
+    // تحميل المنتجات من localStorage
+    const container = document.getElementById("cart-container");
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cartItems.length === 0) {
+      container.innerHTML = "<p style='text-align:center;'>🚫 لا يوجد منتجات في العربة.</p>";
+    } else {
+      cartItems.forEach((item, index) => {
+        const product = document.createElement("div");
+        product.classList.add("product-card");
+        product.innerHTML = `
+          <img src="${item.img}" alt="${item.title}" />
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+          <button onclick="removeItem(${index})">🗑️ حذف</button>
+        `;
+        container.appendChild(product);
+      });
+    }
+
+    function removeItem(index) {
+      cartItems.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      location.reload(); // نعمل تحديث للصفحة
+    }
+  </script>
+<script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 Orfaliis Jewelry. All rights reserved.</p>
+  </footer>
+
+  <!-- رسالة سلامتك -->
+  <div class="safety-msg">سلامتك 💖</div>
+<script>
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const container = document.getElementById("cart-items");
+  container.innerHTML = "";
+
+  cartItems.forEach((item, index) => {
+    const product = document.createElement("div");
+    product.classList.add("product");
+    product.innerHTML = `
+      <img src="${item.img}" alt="${item.title}">
+      <h3>${item.title}</h3>
+      <p>${item.desc}</p>
+      <p>السعر: ${item.price} جنيه</p>
+      <button onclick="removeItem(${index})">🗑️ حذف</button>
+    `;
+    container.appendChild(product);
+  });
+
+  function removeItem(index) {
+    cartItems.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    location.reload();
+  }
+</script>
+</body>
+</html>
